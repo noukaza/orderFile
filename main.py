@@ -14,13 +14,16 @@ def gestionFile(path, firstLine):
     copyfile(path, dist+"/"+folder+"/"+name)
 
 
-files = glob.glob(src+'/**/*.txt')
-files.extend(glob.glob(src+'/*.txt'))
+files = glob.glob(src+'/**/*.*')
+files.extend(glob.glob(src+'/*.*'))
 
 for filepath in files :
-    infile = open(filepath, 'r')
-    firstLine = infile.readline()
-    gestionFile(filepath,firstLine)
+    file_name = filepath.split('/')
+    file_name = file_name[1]
+    proto = file_name.split('|')[0]
+    # infile = open(filepath, 'r')
+    gestionFile(filepath,proto)
+
 
 
 
