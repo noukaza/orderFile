@@ -20,7 +20,7 @@ files.extend(glob.glob(src+'/*.*'))
 for filepath in files :
     file_name = filepath.split('/')
     file_name = file_name[1]
-    proto = file_name.split('-')[0]
+    proto = file_name.split(':--:')[0]
     # infile = open(filepath, 'r')
     gestionFile(filepath,proto)
 
